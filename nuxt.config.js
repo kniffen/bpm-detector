@@ -44,7 +44,8 @@ export default {
     ['@nuxtjs/google-adsense', {
       id:           "ca-pub-1931055016528391",
       pageLevelAds: true
-    }]
+    }],
+    "@nuxtjs/sitemap"
   ],
 
   /*
@@ -60,5 +61,10 @@ export default {
 
   generate: {
     dir: 'docs'
+  },
+
+  sitemap: {
+    hostname: 'https://bpmdetector.net',
+    gzip: true
   }
 }
