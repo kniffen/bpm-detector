@@ -42,7 +42,8 @@ export default {
   modules: [
     "@nuxtjs/svg-sprite",
     ['@nuxtjs/google-adsense', {
-      id: "ca-pub-1931055016528391"
+      id:           "ca-pub-1931055016528391",
+      pageLevelAds: true
     }]
   ],
 
