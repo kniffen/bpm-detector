@@ -14,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap'}
     ]
   },
@@ -59,10 +59,5 @@ export default {
 
   generate: {
     dir: 'docs'
-  },
-
-  router: {
-    linkActiveClass: 'active',
-    base: '/'
   }
 }
