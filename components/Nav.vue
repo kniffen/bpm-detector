@@ -4,7 +4,7 @@
     <nuxt-link to="/file">Detect from files</nuxt-link>
     <nuxt-link to="/listen">Detect by listening</nuxt-link>
     <nuxt-link to="/tap">Detect by tapping</nuxt-link>
-    <nuxt-link to="/accuracy">How accurrate is it?</nuxt-link>
+    <nuxt-link to="/accuracy">How accurate is it?</nuxt-link>
   </nav>
 </template>
 
