@@ -119,6 +119,11 @@
     mounted: async function() {
       const that = this
 
+      navigator.getUserMedia = ( navigator.getUserMedia ||
+                                 navigator.webkitGetUserMedia ||
+                                 navigator.mozGetUserMedia ||
+                                 navigator.msGetUserMedia)
+
       if (!audioContext) audioContext = new AudioContext()
 
       scriptNode = audioContext.createScriptProcessor(4096, 1, 1)
