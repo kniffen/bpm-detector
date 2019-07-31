@@ -59,5 +59,10 @@ export default {
 
   generate: {
     dir: 'docs'
+  },
+
+  router: {
+    linkActiveClass: 'active',
+    base: '/'
   }
 }
