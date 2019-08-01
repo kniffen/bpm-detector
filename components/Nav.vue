@@ -5,6 +5,7 @@
     <nuxt-link to="/listen">Detect by listening</nuxt-link>
     <nuxt-link to="/tap">Detect by tapping</nuxt-link>
     <nuxt-link to="/accuracy">How accurate is it?</nuxt-link>
+    <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
   </nav>
 </template>
 
