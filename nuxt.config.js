@@ -40,11 +40,14 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    "@nuxtjs/svg-sprite",
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-143613942-2'
+    }],
     ['@nuxtjs/google-adsense', {
       id:           "ca-pub-1931055016528391",
       pageLevelAds: true
     }],
+    "@nuxtjs/svg-sprite",
     "@nuxtjs/sitemap"
   ],
 
