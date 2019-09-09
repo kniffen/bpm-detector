@@ -1,6 +1,6 @@
 {
   "name": "bpm-detector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Detect BPM of music from various sources",
   "author": "Kniffen",
   "private": true,
