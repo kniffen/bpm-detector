@@ -3,8 +3,15 @@
     <div class="tap">
       <h1>From tapping the beat</h1>
 
-      <input type="text" id="tapper" v-on:keydown="calculateBPM" v-on:click="calculateBPM"/>
-      <p>Select the square above and start tapping with your keyboard</p>
+      <div id="desktopTapper">
+        <input type="text" class="tapper" v-on:keydown="calculateBPM" v-on:click="calculateBPM"/>
+        <p>Select the square above and start tapping with your keyboard or mouse</p>
+      </div>
+
+      <div id="touchScreenTapper">
+        <div class="tapper" v-touch:tap="calculateBPM"></div>
+        <p>Tap the square to the beat</p>
+      </div>
 
       <div class="results">
         <div>
@@ -70,6 +77,10 @@
 </script>
 
 <style scoped>
+  #touchScreenTapper {
+    display: none;
+  }
+  
   .tap {
     display: grid;
     grid-gap: calc(var(--spacing) * 2);
@@ -77,12 +88,18 @@
     text-align: center;
   }
 
-  #tapper {
+  .tapper {
     width: 50px;
     height: 50px;
     margin: auto;
     border: 2px dashed black;
     text-align: center;
+  }
+
+  #touchScreenTapper .tapper {
+    width: 100px;
+    height: 100px;
+    border: 4px dashed black; 
   }
 
   .results {
@@ -95,5 +112,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--spacing);
+  }
+
+  @media (hover: none) {
+    #desktopTapper {
+      display: none;
+    }
+
+    #touchScreenTapper {
+      display: block;
+    }
   }
 </style>
