@@ -63,6 +63,7 @@
     padding: calc(var(--spacing) * 4) var(--spacing);
     grid-gap: calc(var(--spacing) * 8);
     align-content: start;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   a {
