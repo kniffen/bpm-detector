@@ -2,8 +2,8 @@
   <main>
     <div class="listener">
       <h1> Listen to audio device</h1>
-      
-      <svg-icon 
+
+      <svg-icon
         name="microphone" 
         class="icon" 
         width="300" 
@@ -11,16 +11,18 @@
         viewBox="0 0 300 300" 
         :style="`animation-duration: ${isListening ? 60 / bpm : 0}s;`"
       />
+
+      <div v-if="!deviceSupported" class="unavailable">Device is not supported</div>
       
-      <div class="status">
+      <div class="status" v-if="deviceSupported">
         <span v-if="isFail">Error collecting samples<br /></span>
         <span v-else-if="device">Collecting samples from<br />{{device}}</span>
         <span v-else>Awaiting input<br /></span>
       </div>
 
-      <button v-on:click="toggleListening">{{isListening ? "Cancel" : "Start listening"}}</button>
+      <button v-on:click="toggleListening" v-if="deviceSupported">{{isListening ? "Cancel" : "Start listening"}}</button>
 
-      <h1>{{isFail ? 0 : bpm}}BPM</h1>
+      <h1 v-if="deviceSupported">{{isFail ? 0 : bpm}}BPM</h1>
     </div>
 
     <Advert />
@@ -50,10 +52,11 @@
 
     data: function() {
       return {
-        bpm: 0,
-        isListening: false,
-        isFail:      false,
-        device:      ""
+        bpm:             0,
+        deviceSupported: true,
+        isListening:     false,
+        isFail:          false,
+        device:          ""
       }
     },
 
@@ -119,10 +122,17 @@
     mounted: async function() {
       const that = this
 
-      navigator.getUserMedia = ( navigator.getUserMedia ||
-                                 navigator.webkitGetUserMedia ||
-                                 navigator.mozGetUserMedia ||
-                                 navigator.msGetUserMedia)
+      navigator.getUserMedia = (
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia
+      )
+
+      if (!navigator.getUserMedia || !AudioContext) {
+        that.deviceSupported = false
+        return
+      }
 
       if (!audioContext) audioContext = new AudioContext()
 
@@ -170,6 +180,11 @@
 
   .status {
     height: 2rem;
+  }
+
+  .unavailable {
+    font-weight: bold;
+    color: #E00000;
   }
 
 </style>
