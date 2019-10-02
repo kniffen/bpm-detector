@@ -133,12 +133,10 @@
 
   .fileFormInner {
     position: absolute;
-    display: grid;
     border: 2px dashed var(--color-light-gray);
+    margin: var(--spacing);
     width: calc(100% - var(--spacing) * 2);
     height: calc(100% - var(--spacing) * 2);
-    top: var(--spacing);
-    left: var(--spacing);
     align-items: center;
   }
 
