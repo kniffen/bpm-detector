@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <Advert />
+    <Advert2 />
 
     <Share />
 
@@ -44,8 +44,9 @@
 </template>
 
 <script>
-  import Advert from "@/components/Advert"
-  import Share  from "@/components/Share"
+  import Advert  from "@/components/Advert"
+  import Advert2 from "@/components/Advert2"
+  import Share   from "@/components/Share"
 
   export default {
     name: "accuracy",

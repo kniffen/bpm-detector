@@ -32,6 +32,8 @@
         <span>{{result.bpm}}</span>
       </div>
     </div>
+
+    <Advert2 />
   
     <Share />
 
@@ -40,9 +42,13 @@
 
 <script>
   import decode from "audio-decode"
+  
+  import Advert  from "@/components/Advert"
+  import Advert2 from "@/components/Advert"
+  import Share   from "@/components/Share"
+
   import calculateBPMFromAudioBuffer from "@/utils/calculateBPMFromAudioBuffer"
-  import Advert from "@/components/Advert"
-  import Share  from "@/components/Share"
+
 
   export default {
     name: 'file',
