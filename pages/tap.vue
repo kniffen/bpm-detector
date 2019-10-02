@@ -3,7 +3,7 @@
     <div class="tap">
       <h1>From tapping the beat</h1>
 
-      <input type="text" id="tapper" v-on:keydown="calculateBPM"/>
+      <input type="text" id="tapper" v-on:keydown="calculateBPM" v-on:click="calculateBPM"/>
       <p>Select the square above and start tapping with your keyboard</p>
 
       <div class="results">
@@ -17,7 +17,7 @@
         </div>
         <div>
           <span>Taps:</span>
-          <span>{{taps}}</span>
+          <span>{{taps < 2 ? 0 : taps - 1}}</span>
         </div>
       </div>
   
@@ -56,7 +56,7 @@
         
         this.taps++
         this.end = e.timeStamp
-        this.bpm = (this.taps / ((this.end - this.start) / 60000)).toFixed(2)
+        this.bpm = ((this.taps - 1) / ((this.end - this.start) / 60000)).toFixed(2)
       },
 
       reset: function(e) {
