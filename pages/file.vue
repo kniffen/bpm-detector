@@ -88,21 +88,25 @@
           
           reader.onload = function() {
             const arrayBuffer = new Uint8Array(reader.result)
-            
-            decode(arrayBuffer).then(function(audioBuffer) {
+
+            decode(arrayBuffer, function(err, audioBuffer) {
+              if (err || !audioBuffer) {
+                that.results.push({
+                  filename: file.name,
+                  bpm: "Failed!"
+                })
+                alert(`Failed to detect BPM of ${file.name}`)
+                if (err) console.log(err)
+                return resolve()
+              }
+
               const bpm = calculateBPMFromAudioBuffer(audioBuffer)
+
               that.results.push({
                 filename: file.name,
                 bpm
               })
-              resolve()
-            }).catch(function(err) {
-              that.results.push({
-                filename: file.name,
-                bpm: "Failed!"
-              })
-              alert(`Failed to detect BPM of ${file.name}`)
-              console.log(err)
+
               resolve()
             })
           }
