@@ -20,7 +20,7 @@
 
     <Advert />
 
-    <div class="results" v-if="results.length > 0">
+    <div class="results" ref="results" v-if="results.length > 0">
       <h1>Results</h1>
       
       <div>
@@ -71,10 +71,11 @@
         this.isDetecting = true
 
         const files = e.target.files || e.dataTransfer.files
-      
-        for (const file of files) {
-          this.current = file.name
-          await this.analyzeFile(file)
+
+        for (let i = 0; i < files.length; i++) {
+          this.current = files[i].name
+          await this.analyzeFile(files[i])
+          if (i == 0) this.$refs.results.scrollIntoView({behavior: "smooth", block: "start"})
         }
         
         this.current = ""
