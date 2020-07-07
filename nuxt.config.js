@@ -66,7 +66,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://bpmdetector.net',
+    hostname: 'https://bpmdetector.knifftech.org',
     gzip: true
   }
 }

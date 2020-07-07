@@ -3,7 +3,7 @@
     <h1>Share</h1>
 
     <!-- AddToAny BEGIN -->
-    <div class="shareButtons a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://bpmdetector.net" data-a2a-title="BPM Detector">
+    <div class="shareButtons a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://bpmdetector.knifftech.org" data-a2a-title="BPM Detector">
       <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
       <a class="a2a_button_facebook"></a>
       <a class="a2a_button_twitter"></a>

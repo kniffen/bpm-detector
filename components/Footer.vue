@@ -3,7 +3,7 @@
     <Nav />
 
     <p>
-      Copyright <a href="http://kniffentechnologies.net">Kniffen Technologies</a> 2019
+      Copyright <a href="http://knifftech.org">KniffTech</a> 2019-{{year}}
     </p>
   </footer>
 </template>
@@ -15,6 +15,13 @@
     name: 'Footer',
   
     components: {Nav},
+
+    computed: {
+      year: function() {
+        const d = new Date()
+        return d.getFullYear()
+      }
+    }
   }
 </script>
 
