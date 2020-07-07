@@ -25,8 +25,6 @@
       <h1 v-if="deviceSupported">{{isFail ? 0 : bpm}}BPM</h1>
     </div>
 
-    <Advert />
-    
     <Share />
 
   </main>
@@ -36,7 +34,6 @@
   import audioBufferUtils from "audio-buffer-utils"
   import calculateBPMFromAudioBuffer from "@/utils/calculateBPMFromAudioBuffer"
 
-  import Advert from "@/components/Advert"
   import Share  from "@/components/Share"
 
   let audioContext = null
@@ -48,7 +45,7 @@
   export default {
     name: "listen",
 
-    components: {Advert, Share},
+    components: {Share},
 
     data: function() {
       return {

@@ -19,20 +19,17 @@
       </nuxt-link>
     </div>
 
-    <Advert />
-
     <Share />
   </main>
 </template>
 
 <script>
-  import Advert from "@/components/Advert"
   import Share  from "@/components/Share"
   
   export default {
     name: "home",
 
-    components: {Advert, Share}
+    components: {Share}
   }
 </script>
 

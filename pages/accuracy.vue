@@ -8,8 +8,6 @@
       <p>below are some samples results</p>
     </div>
 
-    <Advert />
-
     <div class="samples">
       <div v-for="genre in genres">
         <h2>{{genre}} {{samples.filter(song => song.genre == genre && song.bpm == song.detected).length / 10 * 100}}%</h2>
@@ -36,22 +34,18 @@
       </div>
     </div>
 
-    <Advert2 />
-
     <Share />
 
   </main>
 </template>
 
 <script>
-  import Advert  from "@/components/Advert"
-  import Advert2 from "@/components/Advert2"
   import Share   from "@/components/Share"
 
   export default {
     name: "accuracy",
 
-    components: {Advert, Share},
+    components: {Share},
 
     data: function() {
       return {

@@ -31,20 +31,17 @@
       <button id="reset" v-on:click="reset">Reset</button>
     </div>
 
-    <Advert />
-
     <Share />
   </main>
 </template>
 
 <script>
-  import Advert from "@/components/Advert"
   import Share  from "@/components/Share"
 
   export default {
     name: "tap",
 
-    components: {Advert, Share},
+    components: {Share},
     
     data: function() {
       return {

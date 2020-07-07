@@ -18,8 +18,6 @@
       </form>
     </div>
 
-    <Advert />
-
     <div class="results" ref="results" v-if="results.length > 0">
       <h1>Results</h1>
       
@@ -32,8 +30,6 @@
         <span>{{result.bpm}}</span>
       </div>
     </div>
-
-    <Advert2 />
   
     <Share />
 
@@ -43,17 +39,14 @@
 <script>
   import decode from "audio-decode"
   
-  import Advert  from "@/components/Advert"
-  import Advert2 from "@/components/Advert"
   import Share   from "@/components/Share"
 
   import calculateBPMFromAudioBuffer from "@/utils/calculateBPMFromAudioBuffer"
 
-
   export default {
     name: 'file',
 
-    components: {Advert, Share},
+    components: {Share},
 
     data: function() {
       return {
