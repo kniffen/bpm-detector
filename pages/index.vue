@@ -17,6 +17,11 @@
         <svg-icon name="tap" class="icon" width="80" height="80" viewBox="0 0 80 80" />
         <p>Tap the beat</p>
       </nuxt-link>
+
+      <nuxt-link to="/metronome/138">
+        <svg-icon name="play" class="icon" width="80" height="80" viewBox="0 0 80 80" />
+        <p>Metronome</p>
+      </nuxt-link>
     </div>
 
     <Share />
@@ -58,11 +63,11 @@
 
   @media (min-width: 768px) {
     .detectionMethods h1 {
-      grid-column: 1 / 4;
+      grid-column: 1 / 3;
     }
 
     .detectionMethods {
-      grid-template-columns: repeat(3, 200px);
+      grid-template-columns: repeat(2, 250px);
       justify-content: center;
     }
 
